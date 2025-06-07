@@ -1,217 +1,2543 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.1",
   "info": {
-    "title": "OpenAPI Plant Store",
-    "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
-    "license": {
-      "name": "MIT"
-    },
+    "title": "Formi",
+    "description": "",
     "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "http://sandbox.mintlify.com"
-    }
-  ],
-  "security": [
-    {
-      "bearerAuth": []
-    }
-  ],
+  "tags": [],
   "paths": {
-    "/plants": {
+    "/v2/agents/{agent_id}/config/usecase/{usecase}": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "summary": "Supported Providers",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
         "parameters": [
           {
-            "name": "limit",
-            "in": "query",
-            "description": "The maximum number of results to return",
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
+            }
+          },
+          {
+            "name": "usecase",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Plant"
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/{agent_id}/config/usecase/{usecase}/providers/{provider}": {
+      "get": {
+        "summary": "Supported Models",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "usecase",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "provider",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/{agent_id}/config/usecase/{usecase}/providers/{provider}/model/{model}": {
+      "get": {
+        "summary": "Supported Parameters",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "usecase",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "provider",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "model",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/{agent_id}/config/model": {
+      "get": {
+        "summary": "Get Model Configuration",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA1LCJ0eXBlIjoiT1VUTEVUIiwibmFtZSI6IkNpdHJpbmUifQ.XzvshJoFZBPvWVYFZcFLqBZ_KWDLRTgGb1eltfWGmQs",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Set Model Configuration",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTA1LCJ0eXBlIjoiT1VUTEVUIiwibmFtZSI6IkNpdHJpbmUifQ.XzvshJoFZBPvWVYFZcFLqBZ_KWDLRTgGb1eltfWGmQs",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/{agent_id}/tools": {
+      "get": {
+        "summary": "Get Tools List",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6Ik9VVExFVCIsIm5hbWUiOiJUYXJ1biJ9.ZvXuMFK4xnq67oZ8-z8DkGdVFyBQ9Edabxay53ZepdE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Add Tool",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/{agent_id}/tools/{tool_name}": {
+      "put": {
+        "summary": "Update Tool",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tool_name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6Ik9VVExFVCIsIm5hbWUiOiJUYXJ1biJ9.ZvXuMFK4xnq67oZ8-z8DkGdVFyBQ9Edabxay53ZepdE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete Tool",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "tool_name",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidHlwZSI6Ik9VVExFVCIsIm5hbWUiOiJUYXJ1biJ9.ZvXuMFK4xnq67oZ8-z8DkGdVFyBQ9Edabxay53ZepdE",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/{agent_id}/state/edge": {
+      "post": {
+        "summary": "Create Edge",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/{agent_id}/state/edge/{edge_id}": {
+      "get": {
+        "summary": "Edge Details",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "edge_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "Update Edge",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "edge_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "600",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete Edge",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "edge_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "601",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/{agent_id}/state": {
+      "post": {
+        "summary": "Create State from Template",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/{agent_id}/state/{state_id}": {
+      "get": {
+        "summary": "Get State Information",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "361",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "put": {
+        "summary": "Update State",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "361",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete State",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "360",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/{agent_id}/state/structure": {
+      "get": {
+        "summary": "Get State Machine Structure",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "67",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/template": {
+      "get": {
+        "summary": "Get All Templates",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "outlet_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": "96",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTcsInR5cGUiOiJPVVRMRVQiLCJuYW1lIjoidGVzdCIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInBob25lIjoiMTIzNDU2Nzg5MCIsImFkZHJlc3MiOiIxMjM0NTY3ODkwIiwiY2l0eSI6InRlc3QiLCJzdGF0ZSI6InRlc3QiLCJ6aXAiOiIxMjM0NTY3ODkwIiwiY291bnRyeSI6InRlc3QifQ.j1FseoqZBzy2W0uqTZTwlmCPRDHxvrEh0z4ibABPgKk",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Create Template",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {}
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/misc/break-down-template": {
+      "post": {
+        "summary": "Template Breakdown",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.AHsIKlhDgwkzQOn_MDlnsA2KqKRHcpOea3pZpgLj4pw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/template/update": {
+      "put": {
+        "summary": "Update Template",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": ""
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/state-machine/template/{template_id}": {
+      "delete": {
+        "summary": "Delete Template",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "template_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/misc/render-template": {
+      "post": {
+        "summary": "Render Template",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              },
+              "example": {
+                "template": "## OBJECTIVES:\n    - Validate the checkin and checkout dates.\n    - Collect the number of guests for which the customer is making.\n## Instructions:\n    1. Strictly trigger the **=** tool to validate the checkin and checkout dates.\n        - **If the check-in is after the checkout date**, then ask if they meant to book from check-in date to checkout date instead**\n        - **If the dates are valid**, then move to step 2.1**\n        - **If the dates are invalid or the dates are in the past based on  **=** tool**, then move to step 1.1**\n        **Next Steps**:\n            1.1 Request for the valid checkin date and checkout date.\n    2. **Ask for number of guests**:\n        2.1 Ask the customer for number of guests they are looking a stay for.\n        **Strictly verify the following once the number of guests is collected**:\n            - If the number of guests are provided vaguely (not sure, between X and Y) then move to 2.2.\n            - If the customer does not want to provide the number of guests then move to 2.3.\n        **Next Steps**:\n            2.2 Clarify if the customer meant X or Y.\n            2.3 Convey this information is required for making and request again..\n            2.4 once the exact number of guests is collected, then move to 2.\n    {% if ask_children_ages_0_or_1 == 1 or ask_children_ages_0_or_1 == \"1\" %}\n    3. **Ask for the age of the children**:\n        3.1 Ask the customer for the age of the children, if the customer indicates there will be children staying.\n        **Strictly verify the following once the age of the children is collected**:\n            - If the customer does not want to provide the age of the children, then move to 3.2.\n            - If the customer indicates there will be children staying (number of children > 0), then move to 2.2\n        **Next Steps**:\n            3.2 Ask for the ages of remaining children.\n            3.3 Convey this information is required for making and request again..\n            3.4 Consider them as adults as they are above 10 years and inform the customer same.\n    {% endif %}\n\n## Prohibited Actions:\n    **Under no circumstances you should do the following**:\n        - Proceeding without collecting number of guests.\n        - Booking or scheduling a call with the manager in this state.\n        - Asking for any other information other than the number of guests.\n        - Asking for the phone number.\n        - Informing the prices of the properties in this state.\n        - Not move to 3.2 if the age of all the children is not collected.\n        - Not move to 3.3 or 2.3 if the user dont want to provide the required information.\n## Additional Context:\n    - If the information is provided by the prospect, confirm them instead asking again or asking irrelavent question which are not state's objective.\n    - 1\n## Examples:\n    - **Example for 1.1**:\n        - \"The dates you have provide are in [past or invalid], could you please tell me the correct check in and checkout dates?\"\n    - **Example for 2.1**:\n       \"Could you please tell me the number of guests who will be visiting us?\"\n    - **Examples for 2.2**:\n        - \"Could you please tell me if you meant X or Y?\"\n    - **Examples for 3.1**:\n        - \"Could you please tell me the ages of [[number of children]] children?\"\n    - **Example for 3.4**:\n        - \"Since the [[number of children above 10 years]] children are above 10 years, we will consider them as adults to make the booking, is that okay?\"\n    \n",
+                "variables": {
+                  "number_of_guests_or_number_of_adults_and_children": "number of guests",
+                  "intent_of_call": "making",
+                  "validate_booking_date_tool_name": "=",
+                  " ask_children_ages_0_or_1 ": "0"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "payload": {
+                      "type": "object",
+                      "properties": {
+                        "rendered_text": {
+                          "type": "string"
+                        },
+                        "payload": {
+                          "type": "object",
+                          "properties": {
+                            "template": {
+                              "type": "string"
+                            },
+                            "variables": {
+                              "type": "object",
+                              "properties": {
+                                "number_of_guests_or_number_of_adults_and_children": {
+                                  "type": "string"
+                                },
+                                "intent_of_call": {
+                                  "type": "string"
+                                },
+                                "validate_booking_date_tool_name": {
+                                  "type": "string"
+                                },
+                                " ask_children_ages_0_or_1 ": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "number_of_guests_or_number_of_adults_and_children",
+                                "intent_of_call",
+                                "validate_booking_date_tool_name",
+                                " ask_children_ages_0_or_1 "
+                              ]
+                            }
+                          },
+                          "required": [
+                            "template",
+                            "variables"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "rendered_text",
+                        "payload"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "message",
+                    "payload"
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents": {
+      "get": {
+        "summary": "Get All Agents",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      },
+      "post": {
+        "summary": "Create Agent",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/{agent_id}": {
+      "get": {
+        "summary": "Single Agent Details",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/agents/55": {
+      "put": {
+        "summary": "Update Agent Details",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/helper/session": {
+      "post": {
+        "summary": "Start Interaction",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "The Authorization Token Shared.",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "interaction_type": {
+                    "type": "string",
+                    "description": "Always send \"user_initiated\" for incoming messages/calls."
+                  },
+                  "customer_phone_number": {
+                    "type": "string",
+                    "description": "The customer's phone number, if the phone number is not available, enter \"NA\""
+                  },
+                  "modality": {
+                    "type": "string",
+                    "description": "The modality of the interaction, valid values are: \"whatsapp\",\"instagram\", \"voice\", \"chatbot\"."
+                  }
+                },
+                "required": [
+                  "interaction_type",
+                  "customer_phone_number",
+                  "modality"
+                ]
+              },
+              "example": {
+                "interaction_type": "user_initiated",
+                "customer_phone_number": "NA",
+                "modality": "instagram"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/text/chatbot/create": {
+      "post": {
+        "summary": "Create Response",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "The Authorization Token Shared.",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDY2MTg4OTUsInBheWxvYWQiOnsib3V0bGV0X2lkIjoxMDh9fQ.vVXmS-g4t6tB51szIhCsO-5llY_WiQLmyVaDqJy",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "session_id": {
+                    "type": "integer",
+                    "description": "The session ID of the interaction you received."
+                  },
+                  "interaction_id": {
+                    "type": "integer",
+                    "description": "The interaction ID of the interaction you received."
+                  },
+                  "messages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "role": {
+                          "type": "string",
+                          "description": "\"user\" or \"assistant\" only allowed"
+                        },
+                        "content": {
+                          "type": "string",
+                          "description": "The utterance in the turn of the user /assistant"
+                        }
+                      },
+                      "required": [
+                        "role",
+                        "content"
+                      ]
+                    },
+                    "description": "The list of messages shared between the agent and the customer."
+                  }
+                },
+                "required": [
+                  "session_id",
+                  "interaction_id",
+                  "messages"
+                ]
+              },
+              "example": null
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/session/{session_id}/interaction/{interaction_id}/end": {
+      "post": {
+        "summary": "End Interaction",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "description": "The Session ID of the interaction",
+            "required": true,
+            "example": "123",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "interaction_id",
+            "in": "path",
+            "description": "The Interaction ID of the interaction",
+            "required": true,
+            "example": "1242",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "transcript": {
+                    "type": "string",
+                    "description": "The transcript of the conversation in \"User\" and \"Assistant\" format in a single string."
+                  }
+                },
+                "required": [
+                  "transcript"
+                ]
+              },
+              "example": {
+                "transcript": "User: Hello\n"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/formi/{agent_id}/calls/{call_type}/create": {
+      "post": {
+        "summary": "Add Calls",
+        "deprecated": false,
+        "description": "### Add Calls\nThis endpoint would take in the list of phone numbers with the context for the list of calls.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "55",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "call_type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "missed",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRm9ybWkgTGFuZCIsImxvZ28iOiJodHRwczovL2kuaWJiLmNvL3lGVHI0blIvM2YyY2UzMGMtY2NhNy00ZDcyLTljMDEtNzUyNDEwZDEzMjEwLUdZTFQtbG9nby5wbmciLCJpZCI6MjYsImNpdHkiOiJCYW5nYWxvcmUiLCJzdGF0ZSI6Ikthcm5hdGFrYSJ9.JOSCGRFfy5lCJWFSFSnouY6SsfpVaxdUzoNdIA6W7gw",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "calls_list": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "guest_phone_number": {
+                          "type": "string",
+                          "description": "The guest's phone number in strict 10 digit format. Duplicate phone numbers are not allowed for a single request."
+                        },
+                        "conversation_instructions": {
+                          "type": "string",
+                          "description": "Conversations instructions to insert in the call, this would be fed in the prompt and should contain the call flow, customer's booking context."
+                        },
+                        "guest_metadata": {
+                          "type": "object",
+                          "properties": {
+                            "guest_name": {
+                              "type": "string",
+                              "description": "Example Data"
+                            },
+                            "Booking_ID": {
+                              "type": "string",
+                              "description": "Example Data"
+                            },
+                            "Check_in_Date": {
+                              "type": "string",
+                              "description": "Example Data",
+                              "nullable": true
+                            },
+                            "Check_out_Date": {
+                              "type": "string",
+                              "description": "Example Data",
+                              "nullable": true
+                            },
+                            "Villa_Name": {
+                              "type": "string",
+                              "description": "Example Data"
+                            },
+                            "Location": {
+                              "type": "string",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Guests": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Extra_People": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Children": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Small_Children": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Rooms": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Pets": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Drivers": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Number_of_Maids": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Meal_Charges": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "Special_Occasion": {
+                              "type": "string",
+                              "description": "Example Data"
+                            },
+                            "Total_Amount": {
+                              "type": "integer",
+                              "description": "Example Data"
+                            },
+                            "House_Rules": {
+                              "type": "object",
+                              "properties": {
+                                "Check_in_after": {
+                                  "type": "string",
+                                  "description": "Example Data"
+                                },
+                                "Check_out_before": {
+                                  "type": "string",
+                                  "description": "Example Data"
+                                },
+                                "Security_Deposit": {
+                                  "type": "string",
+                                  "description": "Example Data"
+                                }
+                              },
+                              "description": "Example Data"
+                            }
+                          },
+                          "required": [
+                            "guest_name",
+                            "Booking_ID"
+                          ],
+                          "description": "Standard details about the guest's details and other metadata. This can be any dictionary and would be shared in the webhook endpoints."
+                        }
+                      },
+                      "required": [
+                        "guest_phone_number",
+                        "conversation_instructions",
+                        "guest_metadata"
+                      ]
+                    },
+                    "description": "The list of calls to add in the queue, the order of the calls would matter in triggering the calls."
+                  }
+                },
+                "required": [
+                  "calls_list",
+                  "01J3N6HSZFVSFN2H8R9SWMDJAG"
+                ]
+              },
+              "example": {
+                "calls_list": [
+                  {
+                    "guest_phone_number": "8017727622",
+                    "conversation_instructions": "You are a helpful agent",
+                    "guest_metadata": {
+                      "guest_name": "Anirudh",
+                      "Booking_ID": "1230628-1212",
+                      "Check_in_Date": "2024-07-19",
+                      "Check_out_Date": "2024-07-21",
+                      "Villa_Name": "Le Farm by the Lake",
+                      "Location": "Kamshet, Maharashtra, India",
+                      "Number_of_Guests": 8,
+                      "Number_of_Extra_People": 0,
+                      "Number_of_Children": 0,
+                      "Number_of_Small_Children": 0,
+                      "Number_of_Rooms": 5,
+                      "Number_of_Pets": 0,
+                      "Number_of_Drivers": 1,
+                      "Number_of_Maids": 0,
+                      "Meal_Charges": 0,
+                      "Special_Occasion": "Null",
+                      "Total_Amount": 107002,
+                      "House_Rules": {
+                        "Check_in_after": "1PM",
+                        "Check_out_before": "10AM",
+                        "Security_Deposit": "₹14000"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "required": [
+                    "01J3N6T26TTT97ARC1JGRHJNRP"
+                  ]
+                },
+                "example": {
+                  "success": true,
+                  "message": "Success",
+                  "payload": {
+                    "next_call": {
+                      "call_id": 524,
+                      "guest_phone_number": "8017727622"
+                    },
+                    "calls_list": [
+                      {
+                        "guest_phone_number": "8017727622",
+                        "guest_metadata": {
+                          "guest_name": "Anirudh",
+                          "Booking_ID": "1230628-1212",
+                          "Check_in_Date": "2024-07-19",
+                          "Check_out_Date": "2024-07-21",
+                          "Villa_Name": "Le Farm by the Lake",
+                          "Location": "Kamshet, Maharashtra, India",
+                          "Number_of_Guests": 8,
+                          "Number_of_Extra_People": 0,
+                          "Number_of_Children": 0,
+                          "Number_of_Small_Children": 0,
+                          "Number_of_Rooms": 5,
+                          "Number_of_Pets": 0,
+                          "Number_of_Drivers": 1,
+                          "Number_of_Maids": 0,
+                          "Meal_Charges": 0,
+                          "Special_Occasion": "Null",
+                          "Total_Amount": 107002,
+                          "House_Rules": {
+                            "Check_in_after": "1PM",
+                            "Check_out_before": "10AM",
+                            "Security_Deposit": "₹14000"
+                          }
+                        },
+                        "conversation_instructions": "You are a helpful agent"
+                      }
+                    ]
                   }
                 }
               }
-            }
+            },
+            "headers": {}
           },
           "400": {
-            "description": "Unexpected error",
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": false,
+                  "message": "Empty data not allowed",
+                  "payload": {
+                    "calls_list": []
+                  },
+                  "error_code": 49
                 }
               }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/formi/{agent_id}/calls/{call_type}/filter": {
+      "post": {
+        "summary": "List of Calls",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "55",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "call_type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "missed",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRm9ybWkgTGFuZCIsImxvZ28iOiJodHRwczovL2kuaWJiLmNvL3lGVHI0blIvM2YyY2UzMGMtY2NhNy00ZDcyLTljMDEtNzUyNDEwZDEzMjEwLUdZTFQtbG9nby5wbmciLCJpZCI6MjYsImNpdHkiOiJCYW5nYWxvcmUiLCJzdGF0ZSI6Ikthcm5hdGFrYSJ9.JOSCGRFfy5lCJWFSFSnouY6SsfpVaxdUzoNdIA6W7gw",
+            "schema": {
+              "type": "string"
             }
           }
-        }
-      },
-      "post": {
-        "description": "Creates a new plant in the store",
+        ],
         "requestBody": {
-          "description": "Plant to add to the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "plant response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                "type": "object",
+                "properties": {
+                  "status_list": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "The statuses of the call, the valid values are \"answered\",\"init\", and \"unanswered\""
+                  },
+                  "start_time": {
+                    "type": "string",
+                    "description": "the start time in \"%Y-%m-%dT%H:%M:%S\" format"
+                  },
+                  "end_time": {
+                    "type": "string",
+                    "description": "the end time in \"%Y-%m-%dT%H:%M:%S\" format"
+                  }
                 }
-              }
-            }
-          },
-          "400": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
+              },
+              "example": {
+                "status_list": [
+                  "init"
+                ]
               }
             }
           }
-        }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Success",
+                  "payload": [
+                    {
+                      "call_timestamp": "2024-07-25T20:07:21",
+                      "guest_phone_number": "8017727622",
+                      "call_status": "init",
+                      "call_metadata": {
+                        "conversation_instructions": "You are a helpful agent",
+                        "guest_name": "Anirudh",
+                        "Booking_ID": "1230628-1212",
+                        "Check_in_Date": "2024-07-19",
+                        "Check_out_Date": "2024-07-21",
+                        "Villa_Name": "Le Farm by the Lake",
+                        "Location": "Kamshet, Maharashtra, India",
+                        "Number_of_Guests": 8,
+                        "Number_of_Extra_People": 0,
+                        "Number_of_Children": 0,
+                        "Number_of_Small_Children": 0,
+                        "Number_of_Rooms": 5,
+                        "Number_of_Pets": 0,
+                        "Number_of_Drivers": 1,
+                        "Number_of_Maids": 0,
+                        "Meal_Charges": 0,
+                        "Special_Occasion": "Null",
+                        "Total_Amount": 107002,
+                        "House_Rules": {
+                          "Check_in_after": "1PM",
+                          "Check_out_before": "10AM",
+                          "Security_Deposit": "₹14000"
+                        }
+                      },
+                      "call_type": "RESERVATION_CONFIRMATION",
+                      "call_id": 526
+                    },
+                    {
+                      "call_timestamp": "2024-07-25T19:57:08",
+                      "guest_phone_number": "8017727622",
+                      "call_status": "init",
+                      "call_metadata": {
+                        "conversation_instructions": "You are a helpful agent",
+                        "guest_name": "Anirudh",
+                        "Booking_ID": "1230628-1212",
+                        "Check_in_Date": "2024-07-19",
+                        "Check_out_Date": "2024-07-21",
+                        "Villa_Name": "Le Farm by the Lake",
+                        "Location": "Kamshet, Maharashtra, India",
+                        "Number_of_Guests": 8,
+                        "Number_of_Extra_People": 0,
+                        "Number_of_Children": 0,
+                        "Number_of_Small_Children": 0,
+                        "Number_of_Rooms": 5,
+                        "Number_of_Pets": 0,
+                        "Number_of_Drivers": 1,
+                        "Number_of_Maids": 0,
+                        "Meal_Charges": 0,
+                        "Special_Occasion": "Null",
+                        "Total_Amount": 107002,
+                        "House_Rules": {
+                          "Check_in_after": "1PM",
+                          "Check_out_before": "10AM",
+                          "Security_Deposit": "₹14000"
+                        }
+                      },
+                      "call_type": "RESERVATION_CONFIRMATION",
+                      "call_id": 525
+                    },
+                    {
+                      "call_timestamp": "2024-07-25T19:43:46",
+                      "guest_phone_number": "8017727622",
+                      "call_status": "init",
+                      "call_metadata": {
+                        "conversation_instructions": "You are a helpful agent",
+                        "guest_name": "Anirudh",
+                        "Booking_ID": "1230628-1212",
+                        "Check_in_Date": "2024-07-19",
+                        "Check_out_Date": "2024-07-21",
+                        "Villa_Name": "Le Farm by the Lake",
+                        "Location": "Kamshet, Maharashtra, India",
+                        "Number_of_Guests": 8,
+                        "Number_of_Extra_People": 0,
+                        "Number_of_Children": 0,
+                        "Number_of_Small_Children": 0,
+                        "Number_of_Rooms": 5,
+                        "Number_of_Pets": 0,
+                        "Number_of_Drivers": 1,
+                        "Number_of_Maids": 0,
+                        "Meal_Charges": 0,
+                        "Special_Occasion": "Null",
+                        "Total_Amount": 107002,
+                        "House_Rules": {
+                          "Check_in_after": "1PM",
+                          "Check_out_before": "10AM",
+                          "Security_Deposit": "₹14000"
+                        }
+                      },
+                      "call_type": "RESERVATION_CONFIRMATION",
+                      "call_id": 524
+                    }
+                  ]
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
       }
     },
-    "/plants/{id}": {
-      "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+    "/v2/formi/{agent_id}/calls/{call_type}/context": {
+      "get": {
+        "summary": "Get Context",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
         "parameters": [
           {
-            "name": "id",
+            "name": "agent_id",
             "in": "path",
-            "description": "ID of plant to delete",
+            "description": "",
             "required": true,
+            "example": "55",
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
+            }
+          },
+          {
+            "name": "call_type",
+            "in": "path",
+            "description": "One of 'confirmation' or 'missed', depending on the use-case",
+            "required": true,
+            "example": "missed",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "outlet_id",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "example": "1",
+            "schema": {
+              "type": "string"
             }
           }
         ],
         "responses": {
-          "204": {
-            "description": "Plant deleted",
-            "content": {}
-          },
-          "400": {
-            "description": "unexpected error",
+          "200": {
+            "description": "",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "type": "object",
+                  "properties": {}
                 }
               }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/formi/{agent_id}/calls/{call_id}": {
+      "get": {
+        "summary": "Single Call Details",
+        "deprecated": false,
+        "description": "### Single Call Details\nGet the call details for a single call based on the Call ID provided by Formi.",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "call_id",
+            "in": "path",
+            "description": "Call ID of the call for which information is required.",
+            "required": true,
+            "example": "643",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidHlwZSI6Ik9VVExFVCIsIm5hbWUiOiJEZW1vIEFjY291bnQgLSBGb3JtaSJ9.lp1RqvyVGrm8aawiSZG1U0sUslcJS29n__KxGM3Lvpw",
+            "schema": {
+              "type": "string"
             }
           }
-        }
-      }
-    }
-  },
-  "webhooks": {
-    "/plant/webhook": {
-      "post": {
-        "description": "Information about a new plant added to the store",
+        ],
         "requestBody": {
-          "description": "Plant added to the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPlant"
+                "type": "object",
+                "properties": {}
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": true,
+                  "message": "Success",
+                  "payload": {
+                    "call_timestamp": "2024-07-25T19:43:46",
+                    "guest_phone_number": "8017727622",
+                    "call_status": "init",
+                    "call_metadata": {
+                      "conversation_instructions": "You are a helpful agent",
+                      "guest_name": "Anirudh",
+                      "Booking_ID": "1230628-1212",
+                      "Check_in_Date": "2024-07-19",
+                      "Check_out_Date": "2024-07-21",
+                      "Villa_Name": "Le Farm by the Lake",
+                      "Location": "Kamshet, Maharashtra, India",
+                      "Number_of_Guests": 8,
+                      "Number_of_Extra_People": 0,
+                      "Number_of_Children": 0,
+                      "Number_of_Small_Children": 0,
+                      "Number_of_Rooms": 5,
+                      "Number_of_Pets": 0,
+                      "Number_of_Drivers": 1,
+                      "Number_of_Maids": 0,
+                      "Meal_Charges": 0,
+                      "Special_Occasion": "Null",
+                      "Total_Amount": 107002,
+                      "House_Rules": {
+                        "Check_in_after": "1PM",
+                        "Check_out_before": "10AM",
+                        "Security_Deposit": "₹14000"
+                      }
+                    },
+                    "call_type": "RESERVATION_CONFIRMATION",
+                    "call_id": 524
+                  }
+                }
+              }
+            },
+            "headers": {}
+          },
+          "400": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                },
+                "example": {
+                  "success": false,
+                  "message": "Call not found."
+                }
+              }
+            },
+            "headers": {}
           }
-        }
+        },
+        "security": []
+      },
+      "delete": {
+        "summary": "Delete Calls",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "call_id",
+            "in": "path",
+            "description": "The Call ID",
+            "required": true,
+            "example": "190",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidHlwZSI6Ik9VVExFVCIsIm5hbWUiOiJUYXJ1biJ9.mBuW0d-aCY-kBl79OvxrjMBX0w1AOIzI13vwUF4TFGU",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/formi/{agent_id}/calls/{call_type}/empty": {
+      "post": {
+        "summary": "Empty Queue",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "agent_id",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "55",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "call_type",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "example": "confirmation",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidHlwZSI6Ik9VVExFVCIsIm5hbWUiOiJUYXJ1biJ9.mBuW0d-aCY-kBl79OvxrjMBX0w1AOIzI13vwUF4TFGU",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/v2/formi/generate/video/welcome": {
+      "post": {
+        "summary": "Generate Welcome Video",
+        "deprecated": false,
+        "description": "",
+        "tags": [],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "example": "formi_45aK79hj4B23nL9",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {}
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "security": []
       }
     }
   },
   "components": {
     "schemas": {
-      "Plant": {
-        "required": [
-          "name"
-        ],
+      "Add Calls Payload": {
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
-            "type": "string"
-          },
-          "tag": {
-            "description": "Tag to specify the type",
-            "type": "string"
+          "calls_list": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "guest_phone_number": {
+                  "type": "string",
+                  "description": "The guest's phone number in strict 10 digit format. Duplicate phone numbers are not allowed for a single request."
+                },
+                "conversation_instructions": {
+                  "type": "string",
+                  "description": "Conversations instructions to insert in the call, this would be fed in the prompt and should contain the call flow, customer's booking context."
+                },
+                "guest_metadata": {
+                  "type": "object",
+                  "properties": {
+                    "guest_name": {
+                      "type": "string",
+                      "description": "Example Data"
+                    },
+                    "Booking_ID": {
+                      "type": "string",
+                      "description": "Example Data"
+                    },
+                    "Check_in_Date": {
+                      "type": "string",
+                      "description": "Example Data",
+                      "nullable": true
+                    },
+                    "Check_out_Date": {
+                      "type": "string",
+                      "description": "Example Data",
+                      "nullable": true
+                    },
+                    "Villa_Name": {
+                      "type": "string",
+                      "description": "Example Data"
+                    },
+                    "Location": {
+                      "type": "string",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Guests": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Extra_People": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Children": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Small_Children": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Rooms": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Pets": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Drivers": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Number_of_Maids": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Meal_Charges": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "Special_Occasion": {
+                      "type": "string",
+                      "description": "Example Data"
+                    },
+                    "Total_Amount": {
+                      "type": "integer",
+                      "description": "Example Data"
+                    },
+                    "House_Rules": {
+                      "type": "object",
+                      "properties": {
+                        "Check_in_after": {
+                          "type": "string",
+                          "description": "Example Data"
+                        },
+                        "Check_out_before": {
+                          "type": "string",
+                          "description": "Example Data"
+                        },
+                        "Security_Deposit": {
+                          "type": "string",
+                          "description": "Example Data"
+                        }
+                      },
+                      "description": "Example Data"
+                    }
+                  },
+                  "required": [
+                    "guest_name",
+                    "Booking_ID"
+                  ],
+                  "description": "Standard details about the guest's details and other metadata. This can be any dictionary and would be shared in the webhook endpoints."
+                }
+              },
+              "required": [
+                "guest_phone_number",
+                "conversation_instructions",
+                "guest_metadata"
+              ]
+            },
+            "description": "The list of calls to add in the queue, the order of the calls would matter in triggering the calls."
           }
-        }
-      },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
+        },
+        "required": [
+          "calls_list",
+          "01J3N6HSZFVSFN2H8R9SWMDJAG"
         ]
-      },
-      "Error": {
-        "required": [
-          "error",
-          "message"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
       }
     },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
-      }
-    }
-  }
+    "securitySchemes": {}
+  },
+  "servers": [],
+  "security": []
 }
