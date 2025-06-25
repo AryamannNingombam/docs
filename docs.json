@@ -22,6 +22,17 @@
         ]
       },
       {
+        "tab": "Interaction AI",
+        "groups": [
+          {
+            "group": "Interaction AI",
+            "pages": [
+              "interaction-ai/introduction"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "API Reference",
         "groups": [
           {
