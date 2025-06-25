@@ -55,11 +55,6 @@
           "anchor": "Community",
           "href": "https://linkedin.com/in/formi-co-in",
           "icon": "linkedin"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
         }
       ]
     }
@@ -72,20 +67,19 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@formi.co.in"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Configure Agent",
+      "href": "https://config.formi.co.in"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/aryamann_formi",
+      "linkedin": "https://linkedin.com/company/formi-co-in"
     }
   }
 }
